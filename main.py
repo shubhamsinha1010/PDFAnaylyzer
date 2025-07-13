@@ -15,9 +15,8 @@ if os.path.exists(".env"):
     load_dotenv(".env")  # For local development
 else:
     # For Streamlit Cloud
-    from streamlit.runtime.secrets import secrets
-    os.environ["HUGGING_FACE_KEY"] = secrets["HUGGING_FACE_KEY"]
-    os.environ["GROQ_API_KEY"] = secrets["GROQ_API_KEY"]
+    os.environ["HUGGING_FACE_KEY"] = st.secrets["HUGGING_FACE_KEY"]
+    os.environ["GROQ_API_KEY"] = st.secrets["GROQ_API_KEY"]
 
 # Initialize the system
 def initialize_system():
